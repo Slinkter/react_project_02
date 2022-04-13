@@ -1,17 +1,21 @@
 import "./App.css";
+// Hook usesState
+import { useState } from "react";
 import logogya from "./imagenes/header.png";
 import { Boton } from "./components/Boton";
-
 import { Contador } from "./components/Contador";
 
 function App() {
-  //
+  // uso de Hooks , son funciones especiales
+  // 1.UseState , agrega un estado a un componente
+  const [numClics, setNumClics] = useState(0);
+
   const manejarClic = () => {
-    console.log("Hola soy clic");
+    setNumClics(numClics + 1);
   };
 
   const reiniciarContador = () => {
-    console.log("reiniciar");
+    setNumClics(0);
   };
 
   return (
@@ -24,7 +28,7 @@ function App() {
         />
       </div>
       <div className="contenedor-principal">
-        <Contador numClics={5} />
+        <Contador numClics={numClics} />
         <Boton
           texto={"click"}
           esBotonDeClic={true}
