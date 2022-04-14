@@ -8,10 +8,10 @@ import { Contador } from "./components/Contador";
 function App() {
   // uso de Hooks , son funciones especiales
   // 1.UseState , agrega un estado a un componente
-  const [numClics, setNumClics] = useState(0);
+  const [numClics, setNumClics] = useState(2);
 
   const manejarClic = () => {
-    setNumClics(numClics + 1);
+    setNumClics(numClics*5);
   };
 
   const reiniciarContador = () => {
